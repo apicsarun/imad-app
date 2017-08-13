@@ -5,25 +5,44 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne = {
-    title: 'Article one | Arun Malhotra',
-    heading: 'Article one',
-    date: 'Aug 13, 2017',
-    content: `     
-                <p>
-                    This is content for first Article.This is content for first Article.This is content for first Article
-                    .This is content for first Article.This is content for first Article
-                </p>
-                <p>
-                    This is content for first Article.This is content for first Article.This is content for first Article
-                    .This is content for first Article.This is content for first Article
-                </p>
-                <p>
-                    This is content for first Article.This is content for first Article.This is content for first Article
-                    .This is content for first Article.This is content for first Article
-                </p>
-            `
+var articles = {
+     article-one = {
+        title: 'Article one | Arun Malhotra',
+        heading: 'Article one',
+        date: 'Aug 13, 2017',
+        content: `     
+                    <p>
+                        This is content for first Article.This is content for first Article.This is content for first Article
+                        .This is content for first Article.This is content for first Article
+                    </p>
+                    <p>
+                        This is content for first Article.This is content for first Article.This is content for first Article
+                        .This is content for first Article.This is content for first Article
+                    </p>
+                    <p>
+                        This is content for first Article.This is content for first Article.This is content for first Article
+                        .This is content for first Article.This is content for first Article
+                    </p>
+                `
+                    },
+    article-two = {
+        title: 'Article two | Arun Malhotra',
+        heading: 'Article two',
+        date: 'Aug 14, 2017',
+        content: `   <p>
+                        2. This is content for second Article.This is content for second Article.This is content for second Article.
+                     </p>
+                    `
+                    },
+    article-three = {
+        title: 'Article three | Arun Malhotra',
+        heading: 'Article three',
+        date: 'Aug 14, 2017',
+        content: `   <p>
+                        3. This is content for third Article.This is content for third Article.This is content for third Article.
+                     </p>
+                    `
+                    }
 };
 
 function createTemplate(data) {
@@ -65,25 +84,23 @@ var htmlTemplate =
  return htmlTemplate;
 }
 
-
-
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function (req, res) {
   //  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-  res.send(createTemplate(articleOne))
+  res.send(createTemplate(articles[article-one]))
 });
 
 app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+//  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+  res.send(createTemplate(articles[article-two]))
 });
 
 app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+ // res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+ res.send(createTemplate(articles[article-three]))
 });
 
 
