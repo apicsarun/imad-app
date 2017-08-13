@@ -91,7 +91,7 @@ app.get('/', function (req, res) {
 app.get('/:article', function (req, res) {
   //  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
   var articleName = req.params.article;
-  console.log(articleName);
+  console.log('Enabled');
   res.send(createTemplate(articles[articleName]));
 });
 
