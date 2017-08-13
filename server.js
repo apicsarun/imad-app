@@ -37,7 +37,7 @@ var articles = {
     articleThree: {
         title: 'Article three | Arun Malhotra',
         heading: 'Article three',
-        date: 'Aug 14, 2017',
+        date: 'Aug 15, 2017',
         content: `   <p>
                         3. This is content for third Article.This is content for third Article.This is content for third Article.
                      </p>
@@ -90,17 +90,20 @@ app.get('/', function (req, res) {
 
 app.get('/article-one', function (req, res) {
   //  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-  res.send(createTemplate(articles[articleOne]));
+  var articleName = 'articleOne';
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
 //  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-  res.send(createTemplate(articles[articleTwo]));
+  var articleName = 'articleTwo';
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-three', function (req, res) {
  // res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
- res.send(createTemplate(articles[articleThree]));
+ var articleName = 'articleThree';
+ res.send(createTemplate(articles[articleName]));
 });
 
 
