@@ -9,7 +9,7 @@ console.log('Before Click');
 img.onclick = function(){
         var left =  img.style.marginLeft;
          console.log(left);
-        img.style.marginLeft = '20px';
+        img.style.marginLeft = left + '20px';
       
     };
     
