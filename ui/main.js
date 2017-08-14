@@ -7,8 +7,10 @@ var img = document.getElementById('madi');
 console.log('Before Click');
 
 img.onclick = function(){
+        var left =  img.style.marginLeft;
+         console.log(left);
         img.style.marginLeft = '100 px';
-        console.log('on Click function');
+      
     };
     
 console.log('After Click');
