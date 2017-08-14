@@ -6,7 +6,7 @@ element.innerHTML = 'New Value';
 var img = document.getElementById('madi');
 console.log('Before Click');
 
-img.onClick = function(){
+img.onclick = function(){
         img.style.marginLeft = '100 px';
         console.log('on Click function');
     };
